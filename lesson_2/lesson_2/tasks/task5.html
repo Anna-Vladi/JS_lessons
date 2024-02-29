@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+</head>
+
+<body>
+    <label for="secondsInput">Введіть кількість секунд:</label>
+    <input type="text" id="secondsInput">
+    <button onclick="convertAndDisplay()">Конвертувати</button>
+    <div id="result"></div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <script>
+        function convertSecondsToTime(seconds) {
+            var hours = Math.floor(seconds / 3600);
+            var remainingSeconds = seconds % 3600;
+            var minutes = Math.floor(remainingSeconds / 60);
+
+            return {
+                hours: hours,
+                minutes: minutes
+            };
+        }
+
+        function convertAndDisplay() {
+            var secondsInput = document.getElementById('secondsInput').value;
+            var secondsElapsed = parseInt(secondsInput);
+
+            if (!isNaN(secondsElapsed)) {
+                var timeResult = convertSecondsToTime(secondsElapsed);
+                document.getElementById('result').innerHTML = secondsElapsed + " секунд дорівнює " + timeResult.hours + " годинам і " + timeResult.minutes + " хвилинам.";
+            } else {
+                document.getElementById('result').innerHTML = "Будь ласка, введіть коректне число секунд.";
+            }
+        }
+    </script>
+</body>
+
+</html>

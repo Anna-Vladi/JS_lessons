@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task0</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        strong {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+
+    <div>
+        <h3>Задача #1</h3>
+        <p>
+            Обчислити <strong>a + 12 + b</strong> :
+        </p>
+        <p>
+            <label for="a1">Введіть значення для 'a'</label>
+            <input id="a1val" name="a1" type="number" /><br><br>
+
+            <label for="b1">Введіть значення для 'b'</label>
+            <input id="b1val" name="b1" type="number" /><br><br>
+
+            <button onclick="calculateFirst()">Обчислити</button>
+        </p>
+        <p>
+            Результат :
+            <strong id="solution1"></strong>
+        </p>
+    </div>
+
+    <br><br>
+
+    <div>
+        <h3>Задача #2</h3>
+        <p>
+            Обчислити <strong>sqrt( (a+b)/2a )</strong> :
+        </p>
+        <p>
+            <label for="a2">Введіть значення для 'a'</label>
+            <input id="a2val" name="a2" type="number" /><br><br>
+
+            <label for="b2">Введіть значення для 'b'</label>
+            <input id="b2val" name="b2" type="number" /><br><br>
+
+            <button onclick="calculateSecond()">Обчислити</button>
+        </p>
+        <p>
+            Результат :
+            <strong id="solution2"></strong>
+        </p>
+    </div>
+
+    <br><br>
+
+    <div>
+        <h3>Задача #3</h3>
+        <p>
+            Обчислити <strong>cbrt( (a+b)c )</strong> :
+        </p>
+        <p>
+            <label for="a3">Введіть значення для 'a'</label>
+            <input id="a3val" name="a3" type="number" /><br><br>
+
+            <label for="b3">Введіть значення для 'b'</label>
+            <input id="b3val" name="b3" type="number" /><br><br>
+
+            <label for="c3">Введіть значення для 'c'</label>
+            <input id="c3val" name="c3" type="number" /><br><br>
+
+            <button onclick="calculateThird()">Обчислити</button>
+        </p>
+        <p>
+            Результат :
+            <strong id="solution3"></strong>
+        </p>
+    </div>
+
+    <br><br>
+
+    <div>
+        <h3>Задача #4</h3>
+        <p>
+            Обчислити <strong>Sin( a/-b )</strong> :
+        </p>
+        <p>
+            <label for="a4">Введіть значення для 'a'</label>
+            <input id="a4val" name="a4" type="number" /><br><br>
+
+            <label for="b4">Введіть значення для 'b'</label>
+            <input id="b4val" name="b4" type="number" /><br><br>
+
+            <button onclick="calculateFourth()">Обчислити</button>
+        </p>
+        <p>
+            Результат :
+            <strong id="solution4"></strong>
+        </p>
+    </div>
+
+    <script>
+        function calculateFirst() {
+            var a = parseInt(document.getElementById("a1val").value);
+            var b = parseInt(document.getElementById("b1val").value);
+
+            document.getElementById("solution1").innerHTML = a + 12 + b;
+        }
+
+        function calculateSecond() {
+            var a = parseInt(document.getElementById("a2val").value);
+            var b = parseInt(document.getElementById("b2val").value);
+
+            document.getElementById("solution2").innerHTML = Math.sqrt((a + b) / (2 * a));
+        }
+
+        function calculateThird() {
+            var a = parseInt(document.getElementById("a3val").value);
+            var b = parseInt(document.getElementById("b3val").value);
+            var c = parseInt(document.getElementById("c3val").value);
+
+            document.getElementById("solution3").innerHTML = Math.cbrt((a + b) * c);
+        }
+
+        function calculateFourth() {
+            var a = parseInt(document.getElementById("a4val").value);
+            var b = parseInt(document.getElementById("b4val").value);
+
+            document.getElementById("solution4").innerHTML = Math.sin(a / (-1 * b));
+        }
+    </script>
+</body>
+
+</html>

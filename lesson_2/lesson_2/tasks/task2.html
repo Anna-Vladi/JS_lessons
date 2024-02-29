@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        p {
+            font-size: 18px;
+            color: #06569b;
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        function calculateAge() {
+            var birthYear = parseInt(prompt("Введіть рік народження:"));
+            var currentYear = parseInt(prompt("Введіть поточний рік:"));
+
+            if (isNaN(birthYear) || isNaN(currentYear)) {
+                alert("Будь ласка, введіть коректні роки.");
+                return;
+            }
+
+            var age = currentYear - birthYear;
+            return age;
+        }
+
+        var ageResult = calculateAge();
+
+        document.write('<p>Кількість років: ' + ageResult + '</p>');
+    </script>
+
+</body>
+
+</html>

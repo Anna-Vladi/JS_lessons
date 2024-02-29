@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task6</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .check {
+            font-size: 18px;
+            color: #333;
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+    </style>
+
+    <h2>Касовий чек</h2>
+    <label for="price">Введіть вартість одиниці товару (грн):</label>
+    <input type="number" id="price" />
+
+    <label for="quantity">Введіть кількість одиниць товару:</label>
+    <input type="number" id="quantity" />
+
+    <button onclick="calculateAndDisplay()">Розрахувати та вивести чек</button>
+
+    <div id="check" class="check"></div>
+
+    <script>
+        function calculateAndDisplay() {
+            var price = parseFloat(document.getElementById('price').value);
+            var quantity = parseInt(document.getElementById('quantity').value);
+
+            if (isNaN(price) || isNaN(quantity) || price < 0 || quantity < 0) {
+                alert("Будь ласка, введіть коректні значення.");
+                return;
+            }
+
+            var totalCost = price * quantity;
+
+
+            var checkElement = document.getElementById('check');
+            checkElement.innerHTML = "<strong>Чек:</strong><br>" +
+                "Товар: " + price.toFixed(2) + " грн/од.<br>" +
+                "Кількість: " + quantity + " од.<br>" +
+                "Загальна вартість: " + totalCost.toFixed(2) + " грн";
+        }
+    </script>
+</body>
+
+</html>

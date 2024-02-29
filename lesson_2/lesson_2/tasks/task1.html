@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+    </style>
+
+    <script>
+        function calculateValues() {
+            var number1 = parseFloat(prompt("Введіть перше число:"));
+            var number2 = parseFloat(prompt("Введіть друге число:"));
+
+            if (isNaN(number1) || isNaN(number2)) {
+                alert("Будь ласка, введіть коректні числа.");
+                return;
+            }
+
+            var sum = number1 + number2;
+            var product = number1 * number2;
+            var quotient = number1 / number2;
+
+            return {
+                sum: sum,
+                product: product,
+                quotient: quotient
+            };
+        }
+
+        var result = calculateValues();
+
+        document.write('<table>');
+        document.write('<tr><th>Operation</th><th>Result</th></tr>');
+        document.write('<tr><td>Sum</td><td>' + result.sum + '</td></tr>');
+        document.write('<tr><td>Product</td><td>' + result.product + '</td></tr>');
+        document.write('<tr><td>Quotient</td><td>' + result.quotient + '</td></tr>');
+        document.write('</table>');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+</head>
+
+<body>
+    <label for="lengthInput">Введіть довжину у сантиметрах:</label>
+    <input type="text" id="lengthInput">
+    <button onclick="convertAndDisplay()">Конвертувати</button>
+    <div id="result"></div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function convertLength(lengthInCentimeters) {
+            var lengthInMeters = lengthInCentimeters / 100;
+            var lengthInKilometers = lengthInCentimeters / 100000;
+
+            return {
+                meters: lengthInMeters,
+                kilometers: lengthInKilometers
+            };
+        }
+
+        function convertAndDisplay() {
+            var lengthInput = document.getElementById('lengthInput').value;
+            var lengthInCentimeters = parseFloat(lengthInput);
+
+            if (!isNaN(lengthInCentimeters)) {
+                var lengthResult = convertLength(lengthInCentimeters);
+                document.getElementById('result').innerHTML = lengthInCentimeters + " сантиметрів дорівнює " + lengthResult.meters + " метрам і " + lengthResult.kilometers + " кілометрам.";
+            } else {
+                document.getElementById('result').innerHTML = "Будь ласка, введіть коректне число сантиметрів.";
+            }
+        }
+    </script>
+</body>
+
+</html>

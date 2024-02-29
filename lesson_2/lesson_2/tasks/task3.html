@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        p {
+            font-size: 18px;
+            color: #064b70;
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        function calculateCostAndVAT() {
+            var unitPrice = parseFloat(prompt("Введіть вартість одиниці товару:"));
+            var quantity = parseInt(prompt("Введіть кількість товару:"));
+
+            if (isNaN(unitPrice) || isNaN(quantity) || unitPrice < 0 || quantity < 0) {
+                alert("Будь ласка, введіть коректні значення.");
+                return;
+            }
+
+            var totalCost = unitPrice * quantity;
+            var vat = 0.05 * totalCost;
+
+            return {
+                totalCost: totalCost,
+                vat: vat
+            };
+        }
+
+        var result = calculateCostAndVAT();
+
+        document.write('<p>Загальна вартість: ' + result.totalCost + '</p>');
+        document.write('<p>ПДВ (5%): ' + result.vat + '</p>');
+    </script>
+</body>
+
+</html>

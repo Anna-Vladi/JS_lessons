@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task7</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            font-size: 18px;
+            color: #333;
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <h2>Обчислення суми випадкового місяця та дня</h2>
+    <button onclick="calculateAndDisplay()">Обчислити</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateAndDisplay() {
+            var randomMonth = Math.floor(Math.random() * 12) + 1;
+            var randomDay = Math.floor(Math.random() * 7);
+
+            var sum = randomMonth + randomDay;
+
+            var resultElement = document.getElementById('result');
+            resultElement.innerHTML = "<strong>Випадковий місяць:</strong> " + randomMonth +
+                "<br><strong>Випадковий день:</strong> " + randomDay +
+                "<br><strong>Сума місяця та дня:</strong> " + sum;
+        }
+    </script>
+</body>
+
+</html>
