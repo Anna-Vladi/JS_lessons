@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+        const driverCategory = prompt('Введіть категорію водія (з великої літери):', 'B')
+        let result
+        switch (driverCategory) {
+            case 'A':
+                result = 'Ви можете керувати МОТОЦИКЛОМ';
+
+                break;
+            case 'B':
+                result = 'Ви можете керувати ЛЕГКОВИМ АВТО';
+
+                break;
+            case 'C':
+                result = 'Ви можете керувати ВАНТАЖНИМ АВТО';
+            default:
+                result = 'Ви ввели невірну категорію';
+                break;
+        }
+        alert(result)
+    </script>
+</body>
+
+</html>

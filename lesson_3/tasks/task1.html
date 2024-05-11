@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <script>
+        const child1Name = prompt('Введіть ім`я першої дитини');
+        const quantCandy1 = parseInt(prompt(`Скільки цукерок має ${child1Name}?`));
+
+        const child2Name = prompt('Введіть ім`я другої дитини');
+        const quantCandy2 = parseInt(prompt(`Скільки цукерок має ${child2Name}?`));
+
+        if (quantCandy1 > quantCandy2) {
+            alert(`Дитина з більшою кількістю цукерок: ${child1Name}`);
+            console.log(`Дитина з більшою кількістю цукерок: ${child1Name}`);
+        } else if (quantCandy2 > quantCandy1) {
+            alert(`Дитина з більшою кількістю цукерок: ${child2Name}`);
+            console.log(`Дитина з більшою кількістю цукерок: ${child2Name}`);
+        } else {
+            alert("Кількість цукерок у обох дітей однакова");
+            console.log("Кількість цукерок у обох дітей однакова");
+        }
+
+    </script>
+</body>
+
+</html>

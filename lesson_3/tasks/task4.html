@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <script>
+        function визначитиСтатус(вік) {
+            if (вік < 3) {
+                return "Неможливо визначити статус для віку менше 3";
+            } else if (вік < 6) {
+                return "Дитина у садочку";
+            } else if (вік < 17) {
+                return "Школяр";
+            } else if (вік < 23) {
+                return "Студент";
+            } else if (вік < 60) {
+                return "Працівник";
+            } else if (вік < 100) {
+                return "Пенсіонер";
+            }
+        }
+
+        let вік = parseInt(prompt("Введіть ваш вік:"));
+        let статус = визначитиСтатус(вік);
+        alert("Ваш статус: " + статус);
+
+    </script>
+
+</body>
+
+</html>

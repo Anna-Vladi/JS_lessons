@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <script>
+        const price = parseFloat(prompt('Введіть ціну товару:', '20'))
+        const moneyAmmount = parseFloat(prompt('Введіть кількість грошей:', '20'))
+        if (price > moneyAmmount) {
+            alert("У вас недостатньо грошей для покупки.");
+        }
+        else {
+            const left = moneyAmmount - price;
+            if (left >= 4) {
+                const choice = confirm(`У вас залишається ${left} грн. Бажаєте купити лотерею за 4 грн?`);
+                if (choice) {
+                    alert("Вітаємо! Ви придбали лотерейний квиток. Бажаємо удачі!");
+                } else {
+                    alert("Дякуємо за покупку!");
+                }
+            } else {
+                alert("Дякуємо за покупку!");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

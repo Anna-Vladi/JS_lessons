@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <script>
+        const randomNumber = Math.floor(Math.random() * 5) + 1;
+        let attempts = 2;
+        function playGame() {
+            const userGuess = parseInt(prompt("Спробуйте вгадати число від 1 до 5. Введіть вашу спробу:"));
+            if (userGuess === randomNumber) {
+                alert("Вітаю! Ви вгадали число!");
+            } else {
+                alert("Ви не вгадали.");
+                attempts--;
+                if (attempts > 0) {
+                    alert(`Спробуйте ще раз. У вас залишилося ${attempts} спроби.`);
+                    playGame();
+                } else {
+                    alert(`На жаль, ви не вгадали. Правильне число було: ${randomNumber}`);
+                }
+            }
+        }
+        playGame();
+
+    </script>
+
+</body>
+
+</html>
